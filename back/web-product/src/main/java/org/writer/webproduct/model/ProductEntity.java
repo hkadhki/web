@@ -44,11 +44,11 @@ public class ProductEntity {
     @Column
     private Date updatedAt;
 
-    @ManyToOne
-    private CategoryEntity category;
+    @Column
+    private String category;
 
-    @ManyToOne
-    private BrandEntity brand;
+    @Column
+    private String brand;
 
     @Column
     private boolean deleted;

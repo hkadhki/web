@@ -8,6 +8,7 @@ import { BasketPage } from './page/BasketPage';
 import { PanelPage } from './page/PanelPage';
 import { SearchPage } from './page/SearchPage';
 import { SearchEmailPage } from './page/SearchEmailPage';
+import { AdminOrder } from './page/AdminOrder';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
             <Route path='/search' element={<SearchPage />} />
             <Route path='/details/:id' element={<DetailsPage />} />
             <Route path='/basket' element={<BasketPage />} />
-            <Route path='/panel' element={<PanelPage />} />
+            <Route path='/admin' element={<PanelPage />} />
             <Route path='/order' element={<SearchEmailPage />} />
+            <Route path='/admin/order' element={<AdminOrder />} />
           </Routes>
         </main>
 

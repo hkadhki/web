@@ -5,12 +5,9 @@ import {
   selectOrderForEmail,
   setEmail,
 } from '../features/searchEmail/searchEmail-slice';
-import { useNavigate } from 'react-router-dom';
-import { CardEmail } from '../components/CardEmail';
 
 export const SearchEmailPage = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
 
 
@@ -78,13 +75,6 @@ export const SearchEmailPage = () => {
           <p className='order__p'>Итог:</p>
           <p className='order__p'>{order.totalAmount} руб.</p>
         </div>
-        {/* <h3>Информация о заказе</h3>
-        <h6>статус заказа</h6>
-        <p>{orders[0].status}</p>
-        <h6>способ оплаты</h6>
-        <p>{orders[0].pay_type}</p>
-        <h6>адрес доставки</h6>
-        <p>{orders[0].address}</p> */}
       </div>))
     )}
     </>

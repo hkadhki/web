@@ -62,10 +62,11 @@ public class ProductController {
         return "Product deleted";
     }
 
-    @PatchMapping
+    @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String updateProduct(@RequestBody CreateProductDto dto) {
-        productService.updateProduct(dto);
+    public String updateProduct(@PathVariable(value = "id") Long id, @RequestBody CreateProductDto dto) {
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        productService.updateProduct(dto, id);
         return "Product updated";
     }
 }

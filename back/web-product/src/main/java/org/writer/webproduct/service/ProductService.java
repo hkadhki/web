@@ -12,5 +12,5 @@ public interface ProductService {
     List<ProductDto> showPopular();
     void createProduct(CreateProductDto dto);
     void deleteProduct(Long id);
-    void updateProduct(CreateProductDto dto);
+    void updateProduct(CreateProductDto dto , Long id);
 }

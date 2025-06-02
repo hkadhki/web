@@ -21,8 +21,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
                     p.description, 
                     p.price, 
                     p.stockQuantity, 
-                    p.category.name, 
-                    p.brand.name,
+                    p.category, 
+                    p.brand,
                     null,
                     p.img 
                 ) 
@@ -38,8 +38,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
                     p.description, 
                     p.price, 
                     p.stockQuantity, 
-                    p.category.name, 
-                    p.brand.name,
+                    p.category, 
+                    p.brand,
                     null,
                     p.img 
                 ) 
@@ -57,8 +57,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
                     p.description, 
                     p.price, 
                     p.stockQuantity, 
-                    p.category.name, 
-                    p.brand.name,
+                    p.category, 
+                    p.brand,
                     null ,
                     p.img 
                 ) 
@@ -75,8 +75,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
                     p.description, 
                     p.price, 
                     p.stockQuantity, 
-                    p.category.name, 
-                    p.brand.name,
+                    p.category, 
+                    p.brand,
                     null ,
                     p.img 
                 ) 

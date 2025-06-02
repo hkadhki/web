@@ -13,8 +13,12 @@ export const createOrder = createAsyncThunk(
   }
 );
 
+
+
 export const initialState = {
   orders: [],
+ status: 'idle',
+  error: null,
 };
 const orderSlice = createSlice({
   name: '@@order',

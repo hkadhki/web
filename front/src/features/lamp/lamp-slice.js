@@ -14,6 +14,20 @@ export const loadLamp = createAsyncThunk(
   }
 );
 
+export const createLamp = createAsyncThunk(
+  '@@lamp/create-lamp',
+  async ({cardInfo, token}, { rejectWithValue }) => {
+    try {
+      const response = await baseUrlLamp.post('/products', cardInfo, {
+        headers: { Authorization : `Bearer ${token}`},
+        },);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message);
+    }
+  }
+);
+
 const initialState = {
     status: 'idle',
     error: null,
@@ -38,6 +52,18 @@ export const lampSlice = createSlice({
        state.status = 'received';
        state.list = action.payload;
       })
+       .addCase(createLamp.pending, (state) => {
+        state.status = 'creating';
+        state.error = null;
+      })
+      .addCase(createLamp.rejected, (state, action) => {
+        state.status = 'rejected';
+        state.error = action.payload || action.meta.error;
+      })
+      .addCase(createLamp.fulfilled, (state, action) => {
+        state.status = 'created';
+        state.list = [...state.list, action.payload];
+      });
   },
 })
 

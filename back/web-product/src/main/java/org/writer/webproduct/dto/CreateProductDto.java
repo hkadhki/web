@@ -7,13 +7,12 @@ import java.util.List;
 
 @Data
 public class CreateProductDto {
-    private Long id;
     private String title;
     private String description;
     private BigDecimal price;
     private Integer stockQuantity;
-    private Integer categoryId;
-    private Integer brandId;
+    private String category;
+    private String brand;
     private List<SpecDto> specs;
     private String img;
 }

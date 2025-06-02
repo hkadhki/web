@@ -16,4 +16,6 @@ public interface SpecRepository extends JpaRepository<SpecsEntity, Long> {
         WHERE s.product.id = :productId
     """)
     List<SpecDto> findSpecsByProductId(@Param("productId") Long productId);
+
+    void deleteSpecsByProductId(@Param("productId") Long productId);
 }
