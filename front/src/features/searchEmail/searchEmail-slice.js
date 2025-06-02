@@ -18,7 +18,7 @@ const initialState = {
     status: 'idle',
     error: null,
     email: '',
-    order: {},
+    order: [],
 }
 export const searchEmailSlice = createSlice({
     name: '@@email',

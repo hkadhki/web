@@ -1,14 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  loadSearchEmail,
-  selectEmailInfo,
-  selectOrderForEmail,
-  setEmail,
+    clearEmail,
+    loadSearchEmail,
+    selectEmailInfo,
+    selectOrderForEmail,
+    setEmail,
 } from '../features/searchEmail/searchEmail-slice';
+import {useEffect} from "react";
 
 export const SearchEmailPage = () => {
   const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(clearEmail());
+    }, []);
 
 
   const handleSearch = (e) => {
@@ -55,7 +60,7 @@ export const SearchEmailPage = () => {
           <p className='order__p'>Статус: {order.status}</p>
           </div>
         <div className='searchEmail__order__products'>
-          {order.items.map((product) => {
+            {order.items && Array.isArray(order.items) && order.items.map(product => {
             return (
               <>
               <div><p className='order__p'>{product.productDto.title}</p>
@@ -69,7 +74,7 @@ export const SearchEmailPage = () => {
         </div>
         <div className='searchEmail__totalPrice'>
           <p className='order__p'>Кол-во товаров:</p>
-          <p className='order__p'>{order.items.reduce((sum,product) => {
+          <p className='order__p'>{order.items?.reduce((sum,product) => {
     return sum + product.quantity;
   }, 0)}</p>
           <p className='order__p'>Итог:</p>

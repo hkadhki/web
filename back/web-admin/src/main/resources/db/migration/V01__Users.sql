@@ -8,6 +8,6 @@ create table users (
 
 
 INSERT into users (email, password)
-VALUES ('User1@gmail.com','$2a$10$ULvp1clg5NwqB6XS3D8aguysSc'),
-       ('User2@gmail.com', '$2a$10$ULvp1clg5NwqB6XS3D8aguysSc')
+VALUES ('user@mail.ru','$2a$10$hmb9wIWXry3p6sTNqgQ8Q.nYNHdK6Fl74mKlLseTxMhz6NF.BFldC')
+
 
